@@ -36,10 +36,8 @@ a { color: inherit; }
 .site-header { border-bottom: 1px solid var(--line); }
 .site-header.compact { padding-block: 22px; }
 .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font-size: 28px; font-weight: 760; }
-.brand-mark { width: 31px; height: 30px; position: relative; display: inline-block; }
-.brand-mark i { position: absolute; bottom: 0; width: 11px; height: 29px; background: linear-gradient(180deg, #7af0bf, var(--accent)); transform: skew(-25deg); }
-.brand-mark i:first-child { left: 5px; }
-.brand-mark i:last-child { left: 17px; height: 21px; transform: skew(25deg); }
+.brand-mark { width: 38px; height: 38px; display: inline-block; border-radius: 10px; background: url("images/atlas-logo.png") center / cover no-repeat; box-shadow: 0 7px 20px rgba(0,0,0,.28); }
+.brand-mark i { display: none; }
 nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 52px); }
 nav a, .language-toggle { font: inherit; color: var(--text); text-decoration: none; background: none; border: 0; cursor: pointer; font-size: 15px; }
 nav a:hover, .language-toggle { color: var(--accent-soft); }
@@ -82,7 +80,10 @@ h1, h2, h3, p { margin-top: 0; }
   transition: transform .2s ease, box-shadow .2s ease;
 }
 .store-button:hover, .primary-button:hover { transform: translateY(-2px); box-shadow: 0 22px 54px rgba(32,212,138,.25); }
-.apple-glyph { width: 25px; height: 25px; display: grid; place-items: center; border: 1px solid rgba(4,17,12,.5); border-radius: 7px; font-size: 7px; }
+.apple-logo { width: 27px; height: 27px; flex: 0 0 auto; }
+.store-label { display: flex; flex-direction: column; line-height: 1.05; }
+.store-label small { font-size: 10px; font-weight: 650; letter-spacing: .04em; }
+.store-label strong { font-size: 20px; }
 
 .product-visual { min-height: 540px; position: relative; perspective: 1000px; }
 .orbit { position: absolute; border: 1px solid rgba(88, 170, 138, .14); border-radius: 50%; width: 650px; height: 650px; left: 2%; top: -10%; }
@@ -127,6 +128,9 @@ h1, h2, h3, p { margin-top: 0; }
 .product-showcase img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid rgba(255,255,255,.14); box-shadow: 0 28px 75px rgba(0,0,0,.35); }
 .product-showcase h2 { font-size: clamp(36px, 4vw, 60px); line-height: 1.08; letter-spacing: -.04em; margin: 18px 0 24px; }
 .product-showcase p:last-child { color: var(--muted); font-size: 18px; line-height: 1.7; }
+.screens-showcase { width: min(100% - 10vw, calc(var(--max) - 10vw)); margin: 0 auto 120px; }
+.screens-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.screens-track img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid rgba(255,255,255,.13); box-shadow: 0 24px 65px rgba(0,0,0,.34); }
 .section-heading { max-width: 760px; margin-bottom: 50px; }
 .section-heading h2, .privacy-callout h2 { font-size: clamp(38px, 4.4vw, 66px); line-height: 1.05; letter-spacing: -.045em; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -163,6 +167,7 @@ footer > a { text-decoration: none; color: var(--text); }
   .hero { grid-template-columns: 1fr; padding-top: 75px; }
   .product-visual { min-height: 520px; transform: scale(.9); transform-origin: top left; width: 111%; }
   .hero-new, .product-showcase { grid-template-columns: 1fr; }
+  .screens-track { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .feature-grid { grid-template-columns: 1fr; }
   .feature-grid article { min-height: auto; }
   .feature-grid h3 { margin-top: 35px; }
@@ -183,6 +188,9 @@ footer > a { text-decoration: none; color: var(--text); }
   .goal-card { width: 285px; left: 3%; bottom: 0; }
   .features, .privacy-callout { width: calc(100% - 44px); margin-bottom: 80px; }
   .product-showcase { width: calc(100% - 44px); margin-bottom: 80px; }
+  .screens-showcase { width: calc(100% - 44px); margin-bottom: 80px; }
+  .screens-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; }
+  .screens-track img { flex: 0 0 82%; scroll-snap-align: start; border-radius: 16px; }
   .privacy-callout { padding: 30px 24px; }
   .section-heading h2, .privacy-callout h2 { font-size: 38px; }
   .legal-shell, .support-shell { width: calc(100% - 44px); padding-block: 70px 95px; }
